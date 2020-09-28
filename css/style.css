@@ -1,0 +1,41 @@
+
+.doctor-perfil {
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.data-container {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    background: blue;
+    height: 100%;
+    top: -600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.3s .3s;
+    cursor: pointer;
+}
+.doctor-perfil:hover .data-container {
+    top: 0px !important;
+}
+h4.perfil-name {
+    font-size: 30px;
+    color: white;
+    font-family: inherit;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+p.perfil-profesion {
+    font-size: 25px;
+    color: white;
+    margin-bottom: 0;
+}
+p.perfil-especialidad {
+    color: lightgrey;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
