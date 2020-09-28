@@ -19,7 +19,9 @@ add_action('init', 'create_post_type_html5');
 function doctores_displays(){
     ob_start();
     ?>
-    <div class="contenedor-doctores">
+    <div class="splide">
+    <div class="contenedor-doctores splide__track">
+    <ul class="splide__list">
     <?php
    					$args = array(  
 				       'post_type' => 'doctores',
@@ -36,7 +38,7 @@ function doctores_displays(){
                         $post_id = get_the_ID();
                            ?>
                            
-    <div class="doctor-perfil"  >
+    <li class="doctor-perfil splide__slide"  >
         <img src="<?php the_post_thumbnail_url('full'); ?>" alt="" >
         <div class="data-container">
             <h4 class="perfil-name">
@@ -49,11 +51,35 @@ function doctores_displays(){
                 <?php echo get_post_meta( $post_id, 'doctor_especialidad', true ); ?>
             </p>
         </div>
-    </div>
+    </li>
+                
     <?php
     endwhile;
     wp_reset_postdata();?>
+    </ul>
+                </div>
     </div>
+    <script>
+        document.addEventListener( 'DOMContentLoaded', function () {
+    new Splide( '.splide',{
+                    type   : 'loop',
+                    perPage: 4,
+                    perMove:1,
+                    autoplay:true,
+                    breakpoints: {
+		                            640: {
+			                    perPage:1,
+                                },
+                                767: {
+			                    perPage:2,
+                                },
+                                991: {
+			                    perPage:3,
+		                        },
+	}
+                } ).mount();
+} );
+    </script>
     <?php
     return ob_get_clean();
 }

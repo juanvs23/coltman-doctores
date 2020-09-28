@@ -20,12 +20,17 @@ define('COLTMAN_DIRECTION',plugin_dir_path( __FILE__ ));
 define('COLTMAN_INC',dirname( __FILE__ ).'/inc/');
 define('COLTMAN_CSS',plugins_url( 'css/', __FILE__ ));
 define('COLTMAN_JS',plugins_url( 'js/', __FILE__ ));
+define('COLTMAN_LIB',plugins_url( 'lib/', __FILE__ ));
 
 
 //assets
 function coltman_register_css_js(){
-    wp_enqueue_style('coltman-style',COLTMAN_CSS . 'style.css',COLTMAN_VERSION);
-    wp_enqueue_script( 'coltman-js', COLTMAN_JS .'custom.js', array('jquery'), COLTMAN_VERSION, true );
+    wp_enqueue_style( 'coltman-splide-core',COLTMAN_LIB . '/splide/css/splide-core.min.css' , array(), COLTMAN_VERSION );
+    wp_enqueue_style( 'coltman-splide-theme',COLTMAN_LIB . '/splide/css/themes/splide-sea-green.min.css' , array('coltman-splide-core'), COLTMAN_VERSION );
+    wp_enqueue_style('coltman-style',COLTMAN_CSS . 'style.css', array('coltman-splide-core','coltman-splide-theme') ,COLTMAN_VERSION);
+    
+    wp_enqueue_script( 'splide', COLTMAN_LIB . '/splide/js/splide.min.js', array('jquery'), COLTMAN_VERSION, true );
+    wp_enqueue_script( 'coltman-js', COLTMAN_JS .'custom.js', array('splide','jquery'), COLTMAN_VERSION, true );
 };
 add_action( 'wp_enqueue_scripts', 'coltman_register_css_js' );
 

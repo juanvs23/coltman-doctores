@@ -1,14 +1,16 @@
-
 .doctor-perfil {
     position: relative;
     border-radius: 50%;
     overflow: hidden;
+	display: inline-block;
+    border: 2px solid #1D8183;
+    margin: 5px;
 }
 .data-container {
     position: absolute;
     width: 100%;
     height: auto;
-    background: blue;
+    background: #5AD6D6;
     height: 100%;
     top: -600px;
     display: flex;
@@ -22,20 +24,32 @@
     top: 0px !important;
 }
 h4.perfil-name {
-    font-size: 30px;
+   font-size: 18px;
     color: white;
     font-family: inherit;
-    line-height: 1.5;
+    line-height: 1;
     margin-bottom: 0;
+    text-align: center;
+    font-weight: 700;
 }
 p.perfil-profesion {
-    font-size: 25px;
+    font-size: 15px;
     color: white;
     margin-bottom: 0;
 }
 p.perfil-especialidad {
-    color: lightgrey;
-    font-size: 20px;
-    font-weight: bold;
+    color: #1D8183;
+    font-size: 13px;
+    font-weight: 400;
     margin: 0;
+    line-height: 1;
+    text-align: center;
+}
+.data-container {
+    padding: 30px;
+}
+@media (min-width:768px){
+	.contenedor-doctores {
+    display: flex;
+}
 }
