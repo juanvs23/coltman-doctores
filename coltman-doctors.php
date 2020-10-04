@@ -3,7 +3,7 @@
  * Plugin Name:       Doctores CENED
  * Plugin URI:        https://example.com/plugins/the-basics/
  * Description:       Listado de personal medico
- * Version:           1.0.0
+ * Version:           1.2.0
  * Requires at least: 5.2
  * Requires PHP:      7.2
  * Author:            Juan Carlos Avila
@@ -14,7 +14,7 @@
  * Domain Path:       /languages
  * */
 //Define
-define('COLTMAN_VERSION','1.0.0');
+define('COLTMAN_VERSION','1.2.0');
 define('COLTMAN_PLUGIN','Doctores');
 define('COLTMAN_DIRECTION',plugin_dir_path( __FILE__ ));
 define('COLTMAN_INC',dirname( __FILE__ ).'/inc/');
@@ -27,6 +27,7 @@ define('COLTMAN_LIB',plugins_url( 'lib/', __FILE__ ));
 function coltman_register_css_js(){
     wp_enqueue_style( 'coltman-splide-core',COLTMAN_LIB . '/splide/css/splide-core.min.css' , array(), COLTMAN_VERSION );
     wp_enqueue_style( 'coltman-splide-theme',COLTMAN_LIB . '/splide/css/themes/splide-sea-green.min.css' , array('coltman-splide-core'), COLTMAN_VERSION );
+    wp_enqueue_style( 'fontAwesome',COLTMAN_LIB . '/fontawesome/css/font-awesome.min.css' , array('coltman-splide-core'), COLTMAN_VERSION );
     wp_enqueue_style('coltman-style',COLTMAN_CSS . 'style.css', array('coltman-splide-core','coltman-splide-theme') ,COLTMAN_VERSION);
     
     wp_enqueue_script( 'splide', COLTMAN_LIB . '/splide/js/splide.min.js', array('jquery'), COLTMAN_VERSION, true );

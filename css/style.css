@@ -23,6 +23,9 @@
 .doctor-perfil:hover .data-container {
     top: 0px !important;
 }
+.splide {
+    padding: 1em;
+}
 h4.perfil-name {
    font-size: 18px;
     color: white;
@@ -36,6 +39,8 @@ p.perfil-profesion {
     font-size: 15px;
     color: white;
     margin-bottom: 0;
+    text-align: center;
+    line-height: 1.2;
 }
 p.perfil-especialidad {
     color: #1D8183;
@@ -48,8 +53,71 @@ p.perfil-especialidad {
 .data-container {
     padding: 30px;
 }
-@media (min-width:768px){
-	.contenedor-doctores {
-    display: flex;
+.container_doctores .row .col-md-3,
+.container_doctores .row .col-md-4,
+.container_doctores .row .col-md-5{
+   padding: 0 15px;
+    display: block;
+        float: left;
 }
+.container_doctores .row {
+    display: block;
+}
+img.doctor-img {
+    max-width: 80%;
+    border: solid #5AD6D6;
+    border-radius: 50%;
+    margin: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+@media(max-width:767px){
+    .container_doctores .row .col-md-3,
+    .container_doctores .row .col-md-4,
+    .container_doctores .row .col-md-5
+    {
+        width: 100%;
+        float: left;
+    }
+   
+}
+.info-content {
+    text-align: center;
+    margin-bottom: 50px;
+}
+h4.info-name {
+    font-size: 30px;
+    font-weight: 700;
+    color: #1d8183;
+}
+h5.info-cargo {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #5AD6D6;
+}
+@media (min-width:768px){
+    .container_doctores .row .col-md-3,
+    .container_doctores .row .col-md-4,
+    .container_doctores .row .col-md-5{
+        width: 50%;
+        max-width: 50%;   
+    }
+
+}
+@media (min-width:992px){
+    .container_doctores .row .col-md-3 {
+        width: 33.33%;
+        max-width: 33.33%;
+    }
+    .container_doctores .row .col-md-4{
+        width: 25%;
+        max-width: 25%;
+    }
+    .container_doctores .row .col-md-5{
+        width: 20%;
+        max-width: 20%;
+    }
+
 }
