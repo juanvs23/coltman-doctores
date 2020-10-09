@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       Doctores CENED
- * Plugin URI:        https://example.com/plugins/the-basics/
+ * Plugin URI:        https://github.com/juanvs23/coltman-doctores.git
  * Description:       Listado de personal medico
  * Version:           1.2.0
  * Requires at least: 5.2
